@@ -13,14 +13,17 @@ public class Task_2_3 {
             balances[i]+= fund;
             break;
         }
+        return -1;
             }
         return balances[i];
     }
 
     public static void main(String[] args) {
-        String ownerName = "Zat";
+        String ownerName = "Zati";
         double fund = 6700;
 
+            if(fundBalance(ownerName,fund)!=(-1))
         System.out.print(ownerName+" "+fundBalance(ownerName,fund));
+        else System.out.print(ownerName+" NO");
     }
 }
