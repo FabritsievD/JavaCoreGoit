@@ -10,26 +10,27 @@ static String [] ownerNames={"Vincent","Butch","Marselos","Mia", "Zat"};
 
         final double COMMISSION=0.05;
         int i=0;
+
     for(String name:ownerNames){
         if(name==ownerName){
             if(balances[i]>=(withdrawal+(withdrawal*COMMISSION))){
                 balances[i]=balances[i]-(withdrawal+(withdrawal*COMMISSION));
-                break;
+
+                return balances[i];
             }
-            System.out.println("NO");break;
         }
     i++;
     }
-
-
-
-        return balances[i];
+        return -1;
     }
 
     public static void main(String[] args) {
         String ownerName = "Zat";
-        double withdrawal= 2000;
-        System.out.println(ownerName+" "+withdrawal+" "+withdrawBalance(ownerName,withdrawal));
+        double withdrawal= 20000;
+
+        if(withdrawBalance(ownerName, withdrawal)==(-1))
+        System.out.print(ownerName+" NO ");
+        else System.out.print(ownerName+" "+withdrawal+" "+withdrawBalance(ownerName,withdrawal));
     }
 
 }
