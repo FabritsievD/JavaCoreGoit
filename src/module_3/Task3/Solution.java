@@ -20,7 +20,7 @@ public class Solution {
 
         SpecialStudent specialStudent1 = new SpecialStudent("Magic","Jonson",45);
         SpecialStudent specialStudent2 = new SpecialStudent("Box", new Course[]{course2,course5});
-        SpecialStudent specialStudent3 = new SpecialStudent(785369, "Sddam","Husein");
+        SpecialStudent specialStudent3 = new SpecialStudent(785369, "Sddam","Husein",34);
 
 
 
