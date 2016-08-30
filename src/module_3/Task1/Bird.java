@@ -1,4 +1,4 @@
-package module_3;
+package module_3.Task1;
 
 
 public class Bird extends Animal{
