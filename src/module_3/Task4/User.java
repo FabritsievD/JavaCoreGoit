@@ -72,29 +72,46 @@ public class User {
     setBalance(balance+salary);
     }
 
-    void withdraw(int summ){
+    void withdraw(int summ) {
         int res;
 
-        if(summ < 1000) {
-            res = (int)(balance - summ - (summ * 0.05));
+        while (true) {
+            if (balance < 1.05*summ){
+                break;
+            }
+
+            if (summ < 1000) {
+                res = (int) (balance - summ - (summ * 0.05));
+                setBalance(res);
+                break;
+            }
+
+            if(summ>=1000 && balance>1.1*summ){
+                res = (int) (balance - summ - (summ * 0.1));
+            setBalance(res);
+                break;
+            }
+
+           break;
         }
-            else res=(int)(balance-summ-(summ*0.1));
-
-        setBalance(res);
-
     }
-
     int companyNameLenght(String companyName){
 
         return (companyName.length());
     }
 
 
-    void monthIncreaser(int addMonth){
-        setMonthOfEployment(monthOfEmployment+addMonth);
+    void monthIncreaser(int addMonth) {
+        while (true) {
+            if(addMonth<=0) break;
+            setMonthOfEployment(monthOfEmployment + addMonth);
+            break;
+        }
     }
-
     public static void main(String[] args) {
-        
+User user=new User("ufgu", 3000,0,"dhjd",500,"shghg");
+
+        user.monthIncreaser(-7);
+        System.out.println(user.getMonthOfEployment());
     }
 }
