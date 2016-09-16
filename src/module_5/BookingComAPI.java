@@ -21,7 +21,7 @@ public class BookingComAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
 
         int roomsCounter=0;
-        Room []emptyRoom = new Room[1];
+
         Room neededRoom = new Room(price,persons,city);
 
         for(int i=0;i<rooms.length;i++){
@@ -31,7 +31,7 @@ public class BookingComAPI implements API {
                 roomsCounter++;
             }
         }
-        if (roomsCounter==0) return emptyRoom;
+        if (roomsCounter==0) return null;
 
         Room [] res = new Room[roomsCounter];
         int resIndex=0;

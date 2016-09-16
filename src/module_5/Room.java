@@ -12,9 +12,6 @@ public class Room {
     private String hotelName;
     private String cityName;
 
-    public Room() {
-    }
-
     public Room(int price, int persons, String cityName) {
         this.price = price;
         this.persons = persons;

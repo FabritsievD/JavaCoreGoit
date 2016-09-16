@@ -24,15 +24,35 @@ public class Controller  {
         Room [] requestsFromTA = apis[1].findRooms(price,persons,city,hotel);
         Room [] requestsFromG = apis[2].findRooms(price,persons,city,hotel);
 
-        int lengthBC = requestsFromBC.length;
-        int lengthTA = requestsFromTA.length;
-        int lengthG = requestsFromG.length;
+        int lengthBC=0;
+        int lengthTA=0;
+        int lengthG=0;
+
+        if(requestsFromBC!=null) { lengthBC = requestsFromBC.length;}
+        if(requestsFromTA!=null) { lengthTA = requestsFromTA.length;}
+        if(requestsFromG!=null)  { lengthG = requestsFromG.length;}
 
         Room [] totalRequest = new Room[lengthG + lengthTA + lengthBC];
+                int index=0;
+        if(requestsFromBC!=null) {
+            for (int i=0; i<requestsFromBC.length;i++){
+                totalRequest[index]=requestsFromBC[i];
+                index++;
+            }
 
-        System.arraycopy(requestsFromBC, 0, totalRequest, 0, lengthBC);
-        System.arraycopy(requestsFromTA,0, totalRequest, lengthBC, lengthTA);
-        System.arraycopy(requestsFromG, 0, totalRequest, lengthTA+lengthTA, lengthG);
+        }
+        if(requestsFromTA!=null) {
+            for (int i=0;i<requestsFromTA.length;i++){
+                totalRequest[index]=requestsFromTA[i];
+                index++;
+            }
+        }
+        if(requestsFromG!=null)  {
+            for(int i=0;i<requestsFromG.length;i++){
+                totalRequest[index]=requestsFromG[i];
+                index++;
+            }
+        }
 
 
         return totalRequest;
