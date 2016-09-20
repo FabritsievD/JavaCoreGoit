@@ -1,7 +1,10 @@
 package module_2;
 
 
+import module_6.ArraysUtils;
+
 public  class Task_1 {
+
 
     static int sum(int[] array) {
         int res = 0;
@@ -207,11 +210,28 @@ return res;
 
     }
 
+    public static void out(int[] array){
+        for (int i=0;i<array.length;i++){
+            System.out.println(array[i]);
+        }
+    }
+
+
+
 public static void main(String[] args) {
     int [] arrayForInt={9,20,70,20,20,1};
     double[] arrayForDouble = {32.1, -3.5, 4.2, 6.6, 678.56, 2.5, 7.234, 10, 5, 14.2};
 
-    System.out.println(secondLargest(arrayForInt));
+
+   // out(ArraysUtils.findEven(arrayForInt));
+    //out(ArraysUtils.reverse(arrayForInt));
+    //System.out.println(ArraysUtils.max(arrayForInt));
+    //System.out.println(ArraysUtils.maxPositive(arrayForInt));
+   // System.out.println(ArraysUtils.modulus(arrayForInt));
+   // System.out.println(ArraysUtils.min(arrayForInt));
+  // System.out.println(ArraysUtils.multiplication(arrayForInt));
+    //System.out.println(ArraysUtils.secondLargest(arrayForInt));
+    System.out.println(ArraysUtils.sum(arrayForInt));
 
 }
 
