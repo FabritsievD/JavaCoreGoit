@@ -49,7 +49,7 @@ User[] res = new User[users.length-counter];
         return res;
     }
 
-    public static User[] paySalaryToUsers(User[] users){
+    public static final User[] paySalaryToUsers(User[] users){
 
          for (int i=0;i<users.length;i++){
 
@@ -59,7 +59,7 @@ User[] res = new User[users.length-counter];
         return users;
     }
 
-    public static long[] getUsersId(User[] users){
+    public static final long[] getUsersId(User[] users){
 
         long[] res = new long[users.length];
 
