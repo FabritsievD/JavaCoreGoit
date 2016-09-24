@@ -4,10 +4,7 @@ package module_5;
 public class Controller  {
 
     API apis[] = new API[3];
-
-
-
-
+    DAO funcDAO = new DAOImpl();
 
     public Controller() {
         apis[0] = new BookingComAPI();
@@ -104,6 +101,39 @@ public class Controller  {
         return theSameRooms;
     }
 
+    public Room save(Room room) {
+        funcDAO.save(room);
+        return  null;
+    }
+
+
+    public boolean delete(Room room) {
+        funcDAO.delete(room);
+        return true;
+        }
+
+
+
+
+
+    public Room update(Room room) {
+        funcDAO.update(room);
+        return null;
+    }
+
+
+
+    public Room findById(long id) {
+
+        funcDAO.findById(id);
+        return null;
+    }
+
+
+    public Room[] getAll() {
+       return funcDAO.getAll();
+
+    }
 
     }
 

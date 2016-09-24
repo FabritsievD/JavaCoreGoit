@@ -2,6 +2,11 @@ package module_5;
 
 public class Main {
 
+
+    static Room[] request1;
+    static Room[] request2;
+    static Room[] request3;
+
     public static void request(Room[] request) {
         for (int i = 0; i < request.length; i++) {
             System.out.println(request[i].toString());
@@ -18,11 +23,11 @@ public class Main {
 
         Controller controller = new Controller();
 
-        Room[] request1= controller.requstRooms(200,2,"City1","Hotel1");
-        Room[] request2=controller.requstRooms(700,2,"City1","Hotel3");
-        Room[] request3=controller.requstRooms(500,1,"City3","Hotel2");
+         request1= controller.requstRooms(200,2,"City1","Hotel1");
+         request2=controller.requstRooms(700,2,"City1","Hotel3");
+         request3=controller.requstRooms(500,1,"City3","Hotel2");
 
-        System.out.println("Request1");
+       /* System.out.println("Request1");
         request(request1);
         System.out.println("Request2");
         request(request2);
@@ -45,7 +50,22 @@ public class Main {
         chek(chek2);
         System.out.println("Chek3");
         chek(chek3);
+*/
+       DAOImpl a=new DAOImpl();
 
+       a.save(request1[0]);
+        a.save(request1[1]);
+       a.save(request2[0]);
+
+
+       a.delete(request1[0]);
+        System.out.println();
+        System.out.println(a.findById(45287));
+        System.out.println();
+        int l=a.getRoomsDB().length;
+        for (int i=0;i<l;i++){
+         System.out.println(a.getRoomsDB()[i]);
+         }
     }
 
 }

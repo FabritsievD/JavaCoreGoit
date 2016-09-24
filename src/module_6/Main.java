@@ -25,7 +25,7 @@ public class Main {
         users[7]= new User(65789,"Rod","Gur",3000,10000);
         users[8]= null;
 
-      // User[] res=UserUtils.uniqueUsers(users);
+      User[] res=UserUtils.uniqueUsers(users);
        // User[] res=UserUtils.usersWithContitionalBalance(users,5000);
         //User[] res=UserUtils.paySalaryToUsers(users);
         /*long[] res=UserUtils.getUsersId(users);
@@ -34,7 +34,7 @@ public class Main {
         }
      */
 
-        User[] res =UserUtils.deleteEmptyUsers(users);
+       //User[] res =UserUtils.deleteEmptyUsers(users);
 
         for (int i=0;i<res.length;i++){
             System.out.println(users[i].toString());
