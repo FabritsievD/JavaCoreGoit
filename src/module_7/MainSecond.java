@@ -35,11 +35,13 @@ public class MainSecond {
         orders[8] = new Order(900058, 1900, USD, "TV", "Foxtrot", user7);
         orders[9] = new Order(845749, 2300, UAH, "Player", "Eldorado", user8);
 
-       TreeSet<Order> orderTreeSet = new TreeSet<>();
+       TreeSet<Order> orderTreeSet = new TreeSet<>(new PriceComparator());
 
         for (Order o : orders) {
             orderTreeSet.add(o);
         }
+        System.out.println(orderTreeSet.first());            //print Order with largest price
+
 
         Iterator <Order> iterator = orderTreeSet.iterator();                      //check if set contain Order where User’s lastName is - “Petrov”
 
@@ -48,6 +50,10 @@ public class MainSecond {
                 System.out.println(iterator.next());
             }
         }
+
+
+
+
 
 
         Iterator<Order> iterator1 = orderTreeSet.iterator();                        //delete orders where currency is USD using Iterator

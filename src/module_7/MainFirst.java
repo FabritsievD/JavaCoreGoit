@@ -42,7 +42,10 @@ public class MainFirst {
             ordersList.add(orders[i]);
         }
 
-      //  Collections.sort(ordersList, new ItemIdentificatorCityComparator());
+       // Collections.sort(ordersList, new PriceComparator());             //sort list by Order price in decrease order
+       // System.out.println(ordersList);
+       // Collections.sort(ordersList, new PriceCityComparator());          //sort list by Order price in increase order AND User city
+      //  Collections.sort(ordersList, new ItemIdentificatorCityComparator());    //sort list by Order itemName AND ShopIdentificator AND User city
 
       //  for (int i = 0; i <ordersList.size() ; i++) {
       //      System.out.println(ordersList.get(i));
@@ -50,7 +53,7 @@ public class MainFirst {
       //  }
 
 
-        Set<Order> orderSet = new HashSet<>(ordersList);     //delete duplicates from the list
+       // Set<Order> orderSet = new HashSet<>(ordersList);     //delete duplicates from the list
        /* Iterator<Order> iter = orderSet.iterator();
         while (iter.hasNext()){
             System.out.println(iter.next());
@@ -59,7 +62,7 @@ public class MainFirst {
        */
 
 
-        List<Order> orderList = new ArrayList<>(orderSet);    //delete items where price less than 1500
+       // List<Order> orderList = new ArrayList<>(orderSet);    //delete items where price less than 1500
       /*  Iterator<Order> iterator = orderList.iterator();
 
         while(iterator.hasNext()) {
@@ -99,21 +102,30 @@ public class MainFirst {
         System.out.println(orderUSD);
          */
 
+    Map <String,List> orderMap = new HashMap<>();
 
-        Set<String> usersCities = new HashSet<>();
-     for(Order o : orderSet){
-         usersCities.add(o.getUser().getCity());
-     }
-
-     List<ArrayList> listByCities = new ArrayList<>();
-
+        List<Order> cityList = new ArrayList<>();
+        int i = 0;
         for (Order o : ordersList) {
-            for (String s : usersCities) {
 
-                if (o.getUser().getCity().equals(s)){
-              listByCities.add(new ArrayList());
-                }
+            if (!orderMap.containsKey(ordersList.get(i).getUser().getCity())){
+
+                orderMap.put(ordersList.get(i).getUser().getCity(),cityList);
+
             }
+            i++;
+        }
+
+        for (Order o:ordersList){
+            if(orderMap.containsKey(o.getUser().getCity())){
+                orderMap.get(o.getUser().getCity()).add(o);
+            }
+
+        }
+
+        for (Map.Entry entry : orderMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + " Value: "
+                    + entry.getValue());
         }
     }
 }
