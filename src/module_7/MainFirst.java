@@ -110,15 +110,25 @@ public class MainFirst {
 
             if (!orderMap.containsKey(ordersList.get(i).getUser().getCity())){
 
-                orderMap.put(ordersList.get(i).getUser().getCity(),cityList);
+                orderMap.put(ordersList.get(i).getUser().getCity(),new ArrayList());
 
             }
             i++;
         }
 
         for (Order o:ordersList){
-            if(orderMap.containsKey(o.getUser().getCity())){
-                orderMap.get(o.getUser().getCity()).add(o);
+            String city = o.getUser().getCity();
+            Set<String> keys = orderMap.keySet();
+
+            for(String currentKey : keys){
+            if(currentKey.equals(city)){
+               List<Order> currentList = orderMap.get(city);
+
+                currentList.add(o);
+                orderMap.put(city,currentList);
+
+            }
+
             }
 
         }
