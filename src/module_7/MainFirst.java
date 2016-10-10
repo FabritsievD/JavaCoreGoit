@@ -42,10 +42,10 @@ public class MainFirst {
             ordersList.add(orders[i]);
         }
 
-       // Collections.sort(ordersList, new PriceComparator());             //sort list by Order price in decrease order
+       // Collections.sort(ordersList, new PriceComparator());                      //sort list by Order price in decrease order
        // System.out.println(ordersList);
-       // Collections.sort(ordersList, new PriceCityComparator());          //sort list by Order price in increase order AND User city
-      //  Collections.sort(ordersList, new ItemIdentificatorCityComparator());    //sort list by Order itemName AND ShopIdentificator AND User city
+       // Collections.sort(ordersList, new PriceCityComparator());                  //sort list by Order price in increase order AND User city
+      //  Collections.sort(ordersList, new ItemIdentificatorCityComparator());      //sort list by Order itemName AND ShopIdentificator AND User city
 
       //  for (int i = 0; i <ordersList.size() ; i++) {
       //      System.out.println(ordersList.get(i));
@@ -53,7 +53,7 @@ public class MainFirst {
       //  }
 
 
-       // Set<Order> orderSet = new HashSet<>(ordersList);     //delete duplicates from the list
+       // Set<Order> orderSet = new HashSet<>(ordersList);          //delete duplicates from the list
        /* Iterator<Order> iter = orderSet.iterator();
         while (iter.hasNext()){
             System.out.println(iter.next());
@@ -62,7 +62,7 @@ public class MainFirst {
        */
 
 
-       // List<Order> orderList = new ArrayList<>(orderSet);    //delete items where price less than 1500
+       // List<Order> orderList = new ArrayList<>(orderSet);        //delete items where price less than 1500
       /*  Iterator<Order> iterator = orderList.iterator();
 
         while(iterator.hasNext()) {
@@ -102,9 +102,9 @@ public class MainFirst {
         System.out.println(orderUSD);
          */
 
-    Map <String,List> orderMap = new HashMap<>();
+    Map <String,List> orderMap = new HashMap<>();                   //separate list for as many lists as many unique cities are in User
 
-        List<Order> cityList = new ArrayList<>();
+
         int i = 0;
         for (Order o : ordersList) {
 
