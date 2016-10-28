@@ -24,12 +24,8 @@ public class Test {
             try {
                 allExceptions(i);
 
-            } catch (SimpleException e) {
-                System.err.println("SimpleEx");
-            } catch (BadException e) {
-                System.err.println("BadEx");
-            } catch (TerribleException e) {
-                System.err.println("TerribleEx");
+            } catch (SimpleException |BadException|TerribleException e) {
+                System.err.println("SomeEx");
             }
         }
     }
